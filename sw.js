@@ -1,8 +1,8 @@
 /* Service worker: guarda a casca do app para abrir rápido e sem internet.
    Os dados em si vêm do Supabase e têm cópia local própria (ver sbdb.js). */
-const VERSION = 'treino-v1';
-const SHELL = ['./', 'index.html', 'config.js', 'sbdb.js', 'garmin.js', 'vendor/supabase.js', 'manifest.webmanifest',
-  'icons/icon-192.png', 'icons/icon-512.png', 'icons/apple-touch-icon.png'];
+const VERSION = 'treino-v2';
+const SHELL = ['./', 'index.html', 'config.js', 'sbdb.js', 'garmin.js', 'supabase.js', 'manifest.webmanifest',
+  'icon-192.png', 'icon-512.png', 'apple-touch-icon.png'];
 
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(VERSION).then(c => c.addAll(SHELL)).then(() => self.skipWaiting()));
